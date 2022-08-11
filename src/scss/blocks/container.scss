@@ -1,0 +1,12 @@
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: $desktop-container;
+
+  &--header {
+    @media (max-width: $vp-1024) {
+      padding: 0;
+    }
+  }
+
+}

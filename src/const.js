@@ -6,4 +6,5 @@ export const ApiRoute = {
 export const StoreNameSpace = {
   DATA: 'data',
   MAIN_PAGE: 'mainPage',
+  USER: 'user',
 };

@@ -7,7 +7,7 @@ import {
   configureStore,
 } from '@reduxjs/toolkit';
 
-import App from './App';
+import App from './components/app/app';
 
 import {
   createAPI,
@@ -16,6 +16,8 @@ import {
   rootReducer as reducer,
 } from './store/reducers/root-reducer';
 import reportWebVitals from './reportWebVitals';
+
+import './scss/index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
