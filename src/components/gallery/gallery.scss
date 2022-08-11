@@ -1,0 +1,42 @@
+.gallery {
+  padding: 22px 0 10px;
+}
+
+.gallery__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 32px;
+
+  @include vp-767 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-479 {
+    display: block;
+  }
+}
+
+.gallery__item {
+  padding-bottom: 22px;
+}
+
+.gallery__image-wrapper {
+  margin-bottom: 8px;
+}
+
+.gallery__image {
+  display: block;
+  width: 100%;
+  height: 216px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery__image-id {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+}

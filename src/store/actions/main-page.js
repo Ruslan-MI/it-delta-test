@@ -7,12 +7,12 @@ import {
 } from '../../const';
 
 const ActionType = {
-  SET_CHOOSEN_IMAGE: `${StoreNameSpace.MAIN_PAGE}/setChoosenImage`,
-  RESET_CHOOSEN_IMAGE: `${StoreNameSpace.MAIN_PAGE}/resetChoosenImage`,
+  SET_CHOOSEN_IMAGE_ID: `${StoreNameSpace.MAIN_PAGE}/setChoosenImageID`,
+  RESET_CHOOSEN_IMAGE_ID: `${StoreNameSpace.MAIN_PAGE}/resetChoosenImageID`,
 };
 
-export const setChoosenImage = createAction(ActionType.SET_CHOOSEN_IMAGE, (id) => ({
+export const setChoosenImageID = createAction(ActionType.SET_CHOOSEN_IMAGE_ID, (id) => ({
   payload: id,
 }));
 
-export const resetChoosenImage = createAction(ActionType.RESET_CHOOSEN_IMAGE);
+export const resetChoosenImageID = createAction(ActionType.RESET_CHOOSEN_IMAGE_ID);

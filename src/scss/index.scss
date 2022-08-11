@@ -1,9 +1,12 @@
 @import "./normalize.scss";
 @import "./variables.scss";
 @import "./scaffolding.scss";
+@import "./mixins.scss";
 
 @import "./blocks/visually-hidden.scss";
 @import "./blocks/container.scss";
 @import "./blocks/page.scss";
 
 @import "../components/header/header.scss";
+@import "../components/loading-stub/loading-stub.scss";
+@import "../components/gallery/gallery.scss";

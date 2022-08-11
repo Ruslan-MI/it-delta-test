@@ -3,20 +3,20 @@ import {
 } from '@reduxjs/toolkit';
 
 import {
-  resetChoosenImage,
-  setChoosenImage,
+  resetChoosenImageID,
+  setChoosenImageID,
 } from '../actions/main-page';
 
 const initialState = {
-  choosenImage: null,
+  choosenImageID: null,
 };
 
 export const reducer = createReducer(initialState, (builder) => {
-  builder.addCase(setChoosenImage, (state, action) => {
-    state.choosenImage = action.payload;
+  builder.addCase(setChoosenImageID, (state, action) => {
+    state.choosenImageID = action.payload;
   });
 
-  builder.addCase(resetChoosenImage, (state) => {
-    state.choosenImage = initialState.choosenImage;
+  builder.addCase(resetChoosenImageID, (state) => {
+    state.choosenImageID = initialState.choosenImageID;
   });
 });
