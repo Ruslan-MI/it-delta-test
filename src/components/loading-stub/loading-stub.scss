@@ -3,4 +3,8 @@
   font-size: 50px;
   text-align: center;
   color: $color-black-russian;
+
+  &--light {
+    color: $color-default-white;
+  }
 }

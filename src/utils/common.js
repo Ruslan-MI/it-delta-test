@@ -1,3 +1,9 @@
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import 'dayjs/locale/ru';
+
+dayjs.extend(relativeTime);
+
 const LinkType = {
   EMAIL: 'email',
   PHONE: 'phone',
@@ -19,3 +25,9 @@ export const getLinkWithPrefix = (type, href) => {
 
   return `${prefix}${href}`;
 };
+
+export const composeHOCs = (Component, hocsArray) =>
+  hocsArray.reduceRight((result, hoc) => hoc(result), Component);
+
+export const getRelativeTime = (date) =>
+  dayjs(date).locale('ru').fromNow();

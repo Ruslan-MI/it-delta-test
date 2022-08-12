@@ -7,8 +7,8 @@ import {
 } from '../../const';
 
 const ActionType = {
-  SET_CHOOSEN_IMAGE_ID: `${StoreNameSpace.MAIN_PAGE}/setChoosenImageID`,
-  RESET_CHOOSEN_IMAGE_ID: `${StoreNameSpace.MAIN_PAGE}/resetChoosenImageID`,
+  SET_CHOOSEN_IMAGE_ID: `${StoreNameSpace.PAGE}/setChoosenImageID`,
+  RESET_CHOOSEN_IMAGE_ID: `${StoreNameSpace.PAGE}/resetChoosenImageID`,
 };
 
 export const setChoosenImageID = createAction(ActionType.SET_CHOOSEN_IMAGE_ID, (id) => ({

@@ -1,15 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import LoadingStub from '../../components/loading-stub/loading-stub';
 
 const withLoadingStub = (Component) => {
-  const withLoadingStubInnerComponent = ({
+  const WithLoadingStubInnerComponent = ({
     isDataLoaded,
+    ...props
   }) => (
-    isDataLoaded ? <Component /> : <LoadingStub />
+    isDataLoaded ? <Component {...props} /> : <LoadingStub {...props} />
   );
 
-  return withLoadingStubInnerComponent;
+  WithLoadingStubInnerComponent.propTypes = {
+    isDataLoaded: PropTypes.bool.isRequired,
+  };
+
+  return WithLoadingStubInnerComponent;
 };
 
 export default withLoadingStub;

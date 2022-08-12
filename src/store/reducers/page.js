@@ -5,7 +5,7 @@ import {
 import {
   resetChoosenImageID,
   setChoosenImageID,
-} from '../actions/main-page';
+} from '../actions/page';
 
 const initialState = {
   choosenImageID: null,

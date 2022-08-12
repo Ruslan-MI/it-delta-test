@@ -8,7 +8,7 @@ import {
 } from '../../const';
 import {
   getLinkWithPrefix,
-} from '../../utils';
+} from '../../utils/common';
 
 const userContactsTypeMap = {
   email: 'Message',

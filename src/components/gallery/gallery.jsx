@@ -11,7 +11,7 @@ import {
 } from '../../const';
 import {
   setChoosenImageID,
-} from '../../store/actions/main-page';
+} from '../../store/actions/page';
 
 const Gallery = () => {
   const {
@@ -23,10 +23,12 @@ const Gallery = () => {
   const dispatch = useDispatch();
 
   const handleGalleryListClick = (evt) => {
-    evt.preventDefault();
+    const targetLink = evt.target.closest('a');
 
-    if (evt.target.matches('.gallery__image')) {
-      dispatch(setChoosenImageID(evt.target.dataset.id));
+    if (targetLink) {
+      evt.preventDefault();
+
+      dispatch(setChoosenImageID(targetLink.dataset.id));
     }
   };
 
@@ -42,8 +44,8 @@ const Gallery = () => {
             }) => (
               <li className='gallery__item' key={id}>
                 <div className='gallery__image-wrapper'>
-                  <a className='gallery__image-link' href="#">
-                    <img className='gallery__image' src={url} alt="Фотография" data-id={id} />
+                  <a className='gallery__image-link' href='#' data-id={id}>
+                    <img className='gallery__image' src={url} alt='Фотография' />
                   </a>
                 </div>
                 <p className='gallery__image-id'>id: {id}</p>

@@ -1,0 +1,16 @@
+.overlay {
+  display: flex;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparentize($color-raven, 0.25);
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.overlay__wrapper {
+  margin: auto;
+}

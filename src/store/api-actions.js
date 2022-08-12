@@ -2,37 +2,32 @@ import {
   ApiRoute,
 } from '../const';
 import {
-  runImagesListLoading,
-  loadingImagesList,
-  runImageItemLoading,
-  loadingImageItem,
+  setImagesList,
+  setImageItem,
 } from './actions/data';
 
 export const fetchImagesList = () => async (dispatch, _getState, api) => {
-  dispatch(runImagesListLoading());
-
   const result = await api.get(ApiRoute.IMAGES);
 
-  dispatch(loadingImagesList(result.data));
+  dispatch(setImagesList(result.data));
 };
 
 export const fetchImageItem = (id) => async (dispatch, _getState, api) => {
-  dispatch(runImageItemLoading());
-
   const result = await api.get(`${ApiRoute.IMAGES}/${id}`);
 
-  dispatch(loadingImageItem(result.data));
+  dispatch(setImageItem(result.data));
 };
 
-export const addComment = (id, {
+export const sendComment = ({
+  id,
   name,
   comment,
+  cb,
 }) => async (_dispatch, _getState, api) => {
   const result = await api.post(`${ApiRoute.IMAGES}/${id}${ApiRoute.COMMENTS}`, {
     name,
     comment,
   });
 
-  // eslint-disable-next-line
-  console.log(result);
+  cb(result);
 };

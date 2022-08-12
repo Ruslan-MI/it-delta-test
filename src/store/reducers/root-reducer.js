@@ -6,8 +6,8 @@ import {
   reducer as dataReducer,
 } from './data';
 import {
-  reducer as mainPageReducer,
-} from './main-page';
+  reducer as pageReducer,
+} from './page';
 import {
   reducer as userReducer,
 } from './user';
@@ -17,6 +17,6 @@ import {
 
 export const rootReducer = combineReducers({
   [StoreNameSpace.DATA]: dataReducer,
-  [StoreNameSpace.MAIN_PAGE]: mainPageReducer,
+  [StoreNameSpace.PAGE]: pageReducer,
   [StoreNameSpace.USER]: userReducer,
 });
