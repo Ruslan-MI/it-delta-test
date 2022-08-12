@@ -1,5 +1,6 @@
 import React, {
   useEffect,
+  useRef,
 } from 'react';
 import PropTypes from 'prop-types';
 
@@ -10,10 +11,12 @@ const withOverlay = (Component) => {
     onModalClose,
     ...props
   }) => {
+    const overlayRef = useRef();
+
     const scrollLock = new ScrollLock();
 
     const handleOverlayMouseDown = (evt) => {
-      if (evt.target.matches('.overlay')) {
+      if (evt.target.matches('.overlay') || evt.target.matches('.overlay__wrapper')) {
         onModalClose();
       }
     };
@@ -24,8 +27,15 @@ const withOverlay = (Component) => {
       }
     };
 
+    const handleOverlayBlur = (evt) => {
+      if (!overlayRef.current.contains(evt.relatedTarget)) {
+        overlayRef.current.focus();
+      }
+    };
+
     useEffect(() => {
       scrollLock.disableScrolling();
+      overlayRef.current.focus();
 
       return () => {
         scrollLock.enableScrolling();
@@ -33,8 +43,8 @@ const withOverlay = (Component) => {
     });
 
     return (
-      <div className='overlay container'
-        onMouseDown={handleOverlayMouseDown} onKeyDown={handleOverlayKeydown}
+      <div className='overlay container' tabIndex='0' ref={overlayRef}
+        onMouseDown={handleOverlayMouseDown} onKeyDown={handleOverlayKeydown} onBlur={handleOverlayBlur}
       >
         <div className='overlay__wrapper'>
           <Component {...props} onModalClose={onModalClose} />

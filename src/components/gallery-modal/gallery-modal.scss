@@ -1,0 +1,108 @@
+.gallery-modal {
+  background-color: $color-default-white;
+  padding: 24px 24px 34px;
+  border-radius: 8px;
+  box-shadow: 0px 20px 25px -5px transparentize($color-default-black, 0.9),
+    0px 10px 10px -5px transparentize($color-default-black, 0.96);
+  margin: 30px auto;
+  max-width: 692px;
+}
+
+.gallery-modal__image-wrapper {
+  width: 100%;
+  max-width: 405px;
+  margin: 0 auto 23px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.gallery-modal__image {
+  object-fit: cover;
+  box-shadow: 0px 25px 50px -12px transparentize($color-default-black, 0.75);
+  border-radius: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-modal__comments-list {
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery-modal__comments-item {
+  border-radius: 10px;
+  padding: 15px 20px;
+  background-color: $color-whisper;
+  margin-bottom: 5px;
+}
+
+.gallery-modal__comments-text {
+  margin: 0 0 5px;
+  color: $color-black-russian;
+}
+
+.gallery-modal__comments-date-wrapper {
+  margin: 0;
+}
+
+.gallery-modal__comments-date {
+  font-size: 12px;
+  color: $color-raven;
+}
+
+.gallery-modal__new-comment-textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.gallery-modal__new-comment-textarea-label {
+  font-size: 14px;
+  line-height: 20px;
+  color: $color-cloud-burst;
+  padding-bottom: 4px;
+  width: fit-content;
+}
+
+.gallery-modal__new-comment-textarea {
+  border: 1px solid $color-link-water;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px transparentize($color-default-black, 0.95);
+  min-height: 105px;
+  padding: 7px;
+  margin-bottom: 8px;
+  color: $color-black-russian;
+  // resize: none;
+}
+
+.gallery-modal__new-comment-textarea-description {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  color: $color-raven;
+}
+
+.gallery-modal__new-comment-submit-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: $color-neon-blue;
+  box-shadow: 0px 1px 2px transparentize($color-default-black, 0.95);
+  font-size: 14px;
+  line-height: 20px;
+  color: $color-default-white;
+  min-width: 67px;
+  height: 38px;
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+}

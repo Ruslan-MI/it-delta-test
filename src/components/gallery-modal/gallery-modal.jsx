@@ -1,7 +1,6 @@
 import React, {
   useState,
   useRef,
-  useEffect,
 } from 'react';
 import {
   useSelector,
@@ -105,10 +104,6 @@ const GalleryModal = () => {
     }
   };
 
-  useEffect(() => {
-    textareaRef.current.focus();
-  }, []);
-
   return (
     <section className='gallery-modal'>
       <h2 className='visually-hidden'>Модальное окно</h2>
@@ -119,9 +114,7 @@ const GalleryModal = () => {
         !!comments.length &&
         <ul className='gallery-modal__comments-list'>
           {
-            [
-              ...comments,
-            ].map(({
+            comments.map(({
               id: commentID,
               text,
               date,
@@ -129,7 +122,7 @@ const GalleryModal = () => {
               <li className='gallery-modal__comments-item' key={commentID}>
                 <blockquote className='gallery-modal__comments-text'>{text}</blockquote>
                 <p className='gallery-modal__comments-date-wrapper'>
-                  <time className='gallery-modal__comments-date-wrapper' dateTime={new Date(date).toISOString()}>
+                  <time className='gallery-modal__comments-date' dateTime={new Date(date).toISOString()}>
                     {getRelativeTime(date)}
                   </time>
                 </p>
@@ -143,16 +136,18 @@ const GalleryModal = () => {
       >
         <div className='gallery-modal__new-comment-textarea-wrapper'>
           <label className='gallery-modal__new-comment-textarea-label' htmlFor="comment">Comment</label>
-          <textarea className='gallery-modal__new-comment-textarea' name="comment" id="comment" cols="30" rows="10"
+          <textarea className='gallery-modal__new-comment-textarea' name="comment" id="comment"
             required value={localState.comment} ref={textareaRef} onKeyDown={handleTextareaKeydown} onChange={() => { }}
           />
           <p className='gallery-modal__new-comment-textarea-description'>Write a few sentences about the photo.</p>
         </div>
-        <button className='gallery-modal__new-comment-submit-button' type='submit'
-          ref={submitButtonRef} onKeyDown={handleSubmitButtonKeydown}
-        >
-          Save
-        </button>
+        <div className='gallery-modal__buttons-wrapper'>
+          <button className='gallery-modal__new-comment-submit-button' type='submit'
+            ref={submitButtonRef} onKeyDown={handleSubmitButtonKeydown}
+          >
+            Save
+          </button>
+        </div>
       </form>
     </section>
   );
