@@ -107,7 +107,7 @@ const GalleryModal = () => {
 
   useEffect(() => () => {
     document.querySelector(`a[data-id="${imageID}"]`).focus();
-  });
+  }, []);
 
   return (
     <section className='gallery-modal'>
