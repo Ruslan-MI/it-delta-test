@@ -82,6 +82,13 @@
   margin-bottom: 8px;
   color: $color-black-russian;
   // resize: none;
+  transition: border-color $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover {
+      border-color: $color-neon-blue;
+    }
+  }
 }
 
 .gallery-modal__new-comment-textarea-description {
@@ -105,4 +112,11 @@
   display: block;
   margin: 0 auto;
   padding: 5px;
+  transition: background-color $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover {
+      background-color: $color-black-russian;
+    }
+  }
 }

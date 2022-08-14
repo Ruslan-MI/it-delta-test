@@ -87,6 +87,13 @@
   padding: 8px 16px 5px 40px;
   position: relative;
   box-shadow: 0px 1px 2px transparentize($color-default-black, 0.95);
+  transition: background-color $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover {
+      background-color: $color-link-water;
+    }
+  }
 
   &--email::before,
   &--phone::before {

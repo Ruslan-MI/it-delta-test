@@ -1,6 +1,7 @@
 import React, {
   useState,
   useRef,
+  useEffect,
 } from 'react';
 import {
   useSelector,
@@ -103,6 +104,10 @@ const GalleryModal = () => {
       textareaRef.current.focus();
     }
   };
+
+  useEffect(() => () => {
+    document.querySelector(`a[data-id="${imageID}"]`).focus();
+  });
 
   return (
     <section className='gallery-modal'>
