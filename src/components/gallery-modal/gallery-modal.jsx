@@ -54,8 +54,10 @@ const GalleryModal = () => {
   const submitButtonRef = useRef();
 
   const handleFormChange = (evt) => {
-    const name = evt.target.name;
-    const value = evt.target.value;
+    const {
+      name,
+      value,
+    } = evt.target;
 
     setLocalState((prevState) => ({
       ...prevState,
@@ -74,10 +76,7 @@ const GalleryModal = () => {
       comment: localState.comment,
       cb: (result) => {
         if (result.status === 204) {
-          setLocalState((prevState) => ({
-            ...prevState,
-            ...initialState,
-          }));
+          setLocalState(() => initialState);
 
           localStorage.clear();
         }

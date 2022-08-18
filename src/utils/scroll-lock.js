@@ -2,7 +2,7 @@ import {
   iosChecker,
 } from './ios-checker';
 
-export default class ScrollLock {
+class ScrollLock {
   constructor() {
     this._iosChecker = iosChecker;
     this._lockClass = this._iosChecker() ? 'scroll-lock-ios' : 'scroll-lock';
@@ -46,3 +46,5 @@ export default class ScrollLock {
     this._scrollTop = null;
   }
 }
+
+export const scrollLock = new ScrollLock();
