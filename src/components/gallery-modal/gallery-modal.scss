@@ -84,7 +84,7 @@
   // resize: none;
   transition: border-color $trans-default;
 
-  @media (hover: hover), screen and (min-width: 0\0) {
+  @include not-touchscreen {
     &:hover {
       border-color: $color-neon-blue;
     }
@@ -114,7 +114,7 @@
   padding: 5px;
   transition: background-color $trans-default;
 
-  @media (hover: hover), screen and (min-width: 0\0) {
+  @include not-touchscreen {
     &:hover {
       background-color: $color-black-russian;
     }

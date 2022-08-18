@@ -23,7 +23,7 @@ const Gallery = () => {
   const dispatch = useDispatch();
 
   const handleGalleryListClick = (evt) => {
-    const targetLink = evt.target.closest('a');
+    const targetLink = evt.target.closest('.gallery__image-link');
 
     if (targetLink) {
       evt.preventDefault();

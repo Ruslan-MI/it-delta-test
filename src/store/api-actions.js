@@ -1,10 +1,12 @@
 import {
-  ApiRoute,
-} from '../const';
-import {
   setImagesList,
   setImageItem,
 } from './actions/data';
+
+export const ApiRoute = {
+  IMAGES: '/images',
+  COMMENTS: '/comments',
+};
 
 export const fetchImagesList = () => async (dispatch, _getState, api) => {
   const result = await api.get(ApiRoute.IMAGES);

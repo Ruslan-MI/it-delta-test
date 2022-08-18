@@ -4,7 +4,9 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 
-import ScrollLock from '../../utils/scroll-lock';
+import {
+  scrollLock,
+} from '../../utils/scroll-lock';
 
 const withOverlay = (Component) => {
   const WithOverlayInnerComponent = ({
@@ -12,8 +14,6 @@ const withOverlay = (Component) => {
     ...props
   }) => {
     const overlayRef = useRef();
-
-    const scrollLock = new ScrollLock();
 
     const handleOverlayMouseDown = (evt) => {
       if (evt.target.matches('.overlay') || evt.target.matches('.overlay__wrapper')) {
